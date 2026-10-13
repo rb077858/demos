@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ענת | סטודיו לציפורניים</title>
+  <meta name="description" content="ענת — סטודיו בוטיק לציפורניים: לק ג׳ל, בניית ציפורניים, מניקור, פדיקור ונייל ארט. קביעת תור אונליין.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23e8558e'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='white' font-family='serif'>ע</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="demo-banner" role="note">
+  <span class="tag">DEMO</span>
+  <span>אתר לדוגמה בלבד<span class="long"> — ההזמנות והתשלומים אינם אמיתיים</span></span>
+  <span aria-hidden="true">·</span>
+  <a data-reem href="mailto:contact@reembir.com">לבניית האתר — דברי עם ראם ←</a>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#top" class="logo">
+      <span class="logo-mark">ע</span>
+      <span><b>ענת</b><small>NAIL STUDIO</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#services">טיפולים ומחירים</a>
+      <a href="#gallery">גלריה</a>
+      <a href="#about">קצת עליי</a>
+      <a href="#reviews">לקוחות ממליצות</a>
+      <a href="#contact">צור קשר</a>
+      <a href="#booking" class="btn btn-primary">לקביעת תור</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="תפריט">☰</button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="eyebrow">💅 סטודיו בוטיק לציפורניים · ראשון לציון</span>
+        <h1>ציפורניים מושלמות<br>שמרגישות <em>בדיוק כמוך</em></h1>
+        <p class="lead">לק ג׳ל, בנייה, מניקור ונייל ארט ביד מקצועית ועם המון אהבה לפרטים. אווירה רגועה, סטריליזציה מלאה וחומרים פרימיום בלבד.</p>
+        <div class="hero-cta">
+          <a href="#booking" class="btn btn-primary">קביעת תור אונליין ←</a>
+          <a href="#services" class="btn btn-ghost">למחירון</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>9+</b><span>שנות ניסיון</span></div>
+          <div><b>2,400+</b><span>לקוחות מרוצות</span></div>
+          <div><b>4.9★</b><span>דירוג בגוגל</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="main"><img src="https://images.unsplash.com/photo-1604902396830-aca29e19b067?w=900&q=80&auto=format&fit=crop" alt="ציפורניים בגוון ורוד עדין"></div>
+        <div class="float one"><span class="ico">📅</span><span><b>התור הפנוי הבא</b><span id="nextSlot">בודקת…</span></span></div>
+        <div class="float two"><span class="ico">✨</span><span><b>עד 3 שבועות</b>עמידות לק ג׳ל</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="bg-white">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">טיפולים ומחירים</span>
+        <h2>מה נעשה היום?</h2>
+        <p>כל טיפול מתחיל בהתאמה אישית — צורה, אורך וגוון שמחמיאים לך. המחירים כוללים מע״מ.</p>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">גלריה</span>
+        <h2>קצת מהעבודות האחרונות</h2>
+        <p>עוד השראה מחכה לך באינסטגרם — @anat.nails</p>
+      </div>
+      <div class="gallery reveal" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about bg-white">
+    <div class="container">
+      <div class="about-img reveal">
+        <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=900&q=80&auto=format&fit=crop" alt="ענת בעבודה בסטודיו">
+        <div class="badge"><b>9</b>שנות ניסיון</div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">נעים להכיר</span>
+        <h2>היי, אני ענת 💕</h2>
+        <p>כבר יותר מתשע שנים שאני מתעסקת במה שאני הכי אוהבת — לגרום לנשים לצאת מהסטודיו עם חיוך ועם ידיים שאי אפשר להפסיק להסתכל עליהן.</p>
+        <p>הסטודיו שלי הוא מקום קטן ושקט, עם קפה טוב, מוזיקה נעימה ויחס אישי. אני עובדת רק עם חומרים איכותיים ובטוחים, ומקפידה על סטריליזציה מלאה בין כל לקוחה ללקוחה.</p>
+        <ul class="checks">
+          <li>מוסמכת בינלאומית לבניית ג׳ל</li>
+          <li>סטריליזציה בחום יבש (אוטוקלאב)</li>
+          <li>מעל 200 גווני ג׳ל במלאי</li>
+          <li>חנייה חינם ליד הסטודיו</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">לקוחות ממליצות</span>
+        <h2>מה אומרות עליי</h2>
+      </div>
+      <div class="testimonials reveal">
+        <div class="testi"><div class="stars">★★★★★</div><p>הלק ג׳ל מחזיק אצלי שלושה שבועות שלמים בלי שבב אחד. ענת פשוט אומנית, וכל ביקור מרגיש כמו פינוק.</p><div class="who"><span class="av">נ</span><span><b>נועה ל.</b><small>לקוחה כבר 3 שנים</small></span></div></div>
+        <div class="testi"><div class="stars">★★★★★</div><p>הגעתי עם תמונה מפינטרסט ויצאתי עם משהו עוד יותר יפה. קביעת התור באתר לוקחת דקה — מושלם.</p><div class="who"><span class="av">מ</span><span><b>מאיה כ.</b><small>בניית ציפורניים</small></span></div></div>
+        <div class="testi"><div class="stars">★★★★★</div><p>נקי, מקצועי, דייקני ונעים. ממליצה בחום לכל מי שמחפשת מקום קבוע. עשיתי אצלה גם את הציפורניים לחתונה!</p><div class="who"><span class="av">ש</span><span><b>שירה א.</b><small>כלה מרוצה</small></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="booking">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">קביעת תור</span>
+        <h2>שריינו לעצמכן זמן איכות</h2>
+        <p>בחרי טיפול, יום ושעה — ואני אאשר את התור בהקדם בהודעת SMS.</p>
+      </div>
+
+      <div class="booking-card">
+        <aside class="booking-side">
+          <h3>הזמנת תור</h3>
+          <p>4 צעדים קצרים ואת בפנים ✨</p>
+          <ol class="steps" id="stepsNav">
+            <li class="active"><span>1</span><em>בחירת טיפול</em></li>
+            <li><span>2</span><em>תאריך ושעה</em></li>
+            <li><span>3</span><em>פרטים ותשלום</em></li>
+            <li><span>4</span><em>אישור</em></li>
+          </ol>
+          <div class="booking-summary" id="summary"></div>
+        </aside>
+
+        <div class="booking-main">
+          <!-- step 1 -->
+          <div class="step active" data-step="1">
+            <h4>איזה טיפול תרצי?</h4>
+            <div class="svc-options" id="svcOptions"></div>
+            <div class="step-actions"><span></span><button class="btn btn-primary" id="to2" disabled>המשך לבחירת מועד ←</button></div>
+          </div>
+
+          <!-- step 2 -->
+          <div class="step" data-step="2">
+            <h4>מתי נוח לך?</h4>
+            <div class="date-time">
+              <div>
+                <div class="cal-head">
+                  <button id="calPrev" aria-label="חודש קודם">›</button>
+                  <b id="calTitle"></b>
+                  <button id="calNext" aria-label="חודש הבא">‹</button>
+                </div>
+                <div class="cal-grid" id="calGrid"></div>
+              </div>
+              <div>
+                <p style="margin:0 0 10px;font-weight:500" id="slotsTitle">בחרי תאריך כדי לראות שעות פנויות</p>
+                <div class="slots" id="slots"></div>
+              </div>
+            </div>
+            <div class="step-actions"><button class="btn btn-ghost" data-back="1">→ חזרה</button><button class="btn btn-primary" id="to3" disabled>המשך לפרטים ←</button></div>
+          </div>
+
+          <!-- step 3 -->
+          <div class="step" data-step="3">
+            <h4>כמעט סיימנו — הפרטים שלך</h4>
+            <form id="detailsForm" novalidate>
+              <div class="row2">
+                <div class="field"><label for="fName">שם מלא *</label><input id="fName" required placeholder="למשל: נועה לוי"></div>
+                <div class="field"><label for="fPhone">טלפון נייד *</label><input id="fPhone" required inputmode="tel" placeholder="050-0000000"></div>
+              </div>
+              <div class="field"><label for="fNotes">הערות / בקשות מיוחדות</label><textarea id="fNotes" rows="2" placeholder="גוון מועדף, תמונת השראה, רגישויות…"></textarea></div>
+
+              <label style="font-weight:500;font-size:14px">אופן תשלום</label>
+              <div class="pay-choice">
+                <label><input type="radio" name="pay" value="later" checked><span><b>תשלום בסטודיו</b><small>מזומן, ביט או אשראי ביום הטיפול</small></span></label>
+                <label><input type="radio" name="pay" value="deposit"><span><b>מקדמה ₪<span id="depAmt">50</span></b><small>שריון מיידי · מתקזז מהמחיר</small></span></label>
+              </div>
+              <div class="card-box" id="cardBox" hidden>
+                <p class="note">🔒 מצב דמו — אין להזין פרטי כרטיס אמיתיים. הפרטים לא נשמרים ולא נשלחים לשום מקום.</p>
+                <div class="field"><label for="cNum">מספר כרטיס</label><input id="cNum" inputmode="numeric" value="4580 1234 5678 9012" autocomplete="off"></div>
+                <div class="row2">
+                  <div class="field"><label for="cExp">תוקף</label><input id="cExp" value="12/28" autocomplete="off"></div>
+                  <div class="field"><label for="cCvv">CVV</label><input id="cCvv" value="123" autocomplete="off"></div>
+                </div>
+              </div>
+              <label style="display:flex;gap:8px;align-items:center;font-size:14px"><input type="checkbox" id="fAgree" checked style="accent-color:var(--pink)"> קראתי ואני מסכימה למדיניות הביטולים (ביטול עד 24 שעות לפני)</label>
+              <div class="step-actions"><button type="button" class="btn btn-ghost" data-back="2">→ חזרה</button><button type="submit" class="btn btn-primary" id="submitBtn">שליחת בקשה לתור ←</button></div>
+            </form>
+          </div>
+
+          <!-- step 4 -->
+          <div class="step" data-step="4">
+            <div class="success">
+              <div class="big">💖</div>
+              <h4>הבקשה התקבלה!</h4>
+              <div class="ref" id="refNum"></div>
+              <p id="successText"></p>
+              <p class="hint">💡 זה דמו — היכנסי ל<a href="admin/">ממשק הניהול</a> כדי לראות איך ההזמנה מופיעה אצל ענת, לאשר אותה ולקבוע זמנים.</p>
+              <div class="step-actions" style="justify-content:center"><button class="btn btn-ghost" id="again">הזמנת תור נוסף</button><a class="btn btn-primary" href="admin/">לממשק הניהול ←</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-white">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">צור קשר</span><h2>נשמח לראות אותך</h2></div>
+      <div class="contact-grid reveal">
+        <div class="contact-item"><div class="ico">📍</div><b>כתובת</b><span>רחוב הרצל 120, ראשון לציון<br>(קומת קרקע, כניסה מהחצר)</span></div>
+        <div class="contact-item"><div class="ico">📞</div><b>טלפון / וואטסאפ</b><a href="tel:0501234567">050-123-4567</a></div>
+        <div class="contact-item"><div class="ico">🕐</div><b>שעות פעילות</b><div class="hours-list" id="hoursList"></div></div>
+        <div class="contact-item"><div class="ico">📸</div><b>אינסטגרם</b><a href="#gallery">@anat.nails</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <a href="#top" class="logo"><span class="logo-mark">ע</span><span><b>ענת</b><small>NAIL STUDIO</small></span></a>
+    <div>ציפורניים · לק ג׳ל · בנייה · מניקור · פדיקור</div>
+    <a href="admin/">כניסה לממשק ניהול (דמו) ←</a>
+  </div>
+  <div class="container footer-bottom">
+    <span>© ענת סטודיו לציפורניים · כל הזכויות שמורות</span>
+    <span>אתר דמו · <a data-reem href="mailto:contact@reembir.com">רוצה אתר כזה? דברי עם ראם</a></span>
+  </div>
+</footer>
+
+<a class="wa-float" href="#contact" aria-label="וואטסאפ">💬</a>
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<script src="assets/store.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

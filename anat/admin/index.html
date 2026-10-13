@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ניהול סטודיו · ענת</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23e8558e'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='white' font-family='serif'>ע</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/admin.css">
+</head>
+<body>
+
+<div class="demo-banner" role="note">
+  <span class="tag">DEMO</span>
+  <span>ממשק ניהול לדוגמה<span class="long"> — כל הנתונים פיקטיביים ונשמרים רק בדפדפן שלך</span></span>
+  <span aria-hidden="true">·</span>
+  <a data-reem href="mailto:contact@reembir.com">לבניית האתר — דברי עם ראם ←</a>
+</div>
+
+<div class="login" id="login">
+  <form class="login-card" id="loginForm">
+    <div class="mark">ע</div>
+    <h1>שלום ענת 👋</h1>
+    <p>כניסה לממשק ניהול הסטודיו</p>
+    <div class="field"><label for="lUser">שם משתמש</label><input id="lUser" value="anat" autocomplete="off"></div>
+    <div class="field"><label for="lPass">סיסמה</label><input id="lPass" type="password" value="demo1234" autocomplete="off"></div>
+    <button class="btn btn-primary" style="width:100%;padding:13px">כניסה ←</button>
+    <small>בדמו הפרטים כבר ממולאים — פשוט לוחצים כניסה</small>
+  </form>
+</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="brand"><span class="mark">ע</span><span><b>ענת</b><small>ניהול הסטודיו</small></span></div>
+    <button class="navbtn active" data-page="dash"><span class="ic">🏠</span>לוח בקרה</button>
+    <button class="navbtn" data-page="bookings"><span class="ic">📋</span>הזמנות<span class="count" id="navPending" hidden></span></button>
+    <button class="navbtn" data-page="calendar"><span class="ic">📅</span>יומן</button>
+    <button class="navbtn" data-page="avail"><span class="ic">🕐</span>זמינות וחופשות</button>
+    <button class="navbtn" data-page="payments"><span class="ic">💳</span>תשלומים</button>
+    <button class="navbtn" data-page="clients"><span class="ic">👩</span>לקוחות</button>
+    <button class="navbtn" data-page="services"><span class="ic">💅</span>טיפולים ומחירים</button>
+    <div class="spacer"></div>
+    <div class="foot">
+      <a class="navbtn" href="../"><span class="ic">🌐</span>צפייה באתר</a>
+      <button class="navbtn" id="resetBtn"><span class="ic">↺</span>איפוס נתוני דמו</button>
+      <button class="navbtn" id="logoutBtn"><span class="ic">⎋</span>יציאה</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div><h2 id="pageTitle">לוח בקרה</h2><div class="sub" id="pageSub"></div></div>
+      <div class="actions">
+        <button class="bell" id="bell" title="בקשות חדשות">🔔<span class="dot" id="bellDot" hidden></span></button>
+        <button class="btn btn-primary" id="newBookingBtn">+ תור חדש</button>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <section class="page active" id="page-dash">
+      <div class="grid g-4" id="stats"></div>
+      <div class="grid g-2" style="margin-top:18px">
+        <div class="card"><h3>התורים של היום <small id="todayLabel"></small></h3><div id="todayList"></div></div>
+        <div class="card"><h3>ממתינות לאישור <small><a href="#" data-goto="bookings" data-filter="pending">לכל הבקשות</a></small></h3><div id="pendingList"></div></div>
+      </div>
+      <div class="grid g-2" style="margin-top:18px">
+        <div class="card"><h3>הכנסות לפי חודש <small>₪, 6 חודשים אחרונים</small></h3><div id="revChart"></div></div>
+        <div class="card"><h3>טיפולים פופולריים <small>90 ימים אחרונים</small></h3><div id="popular"></div></div>
+      </div>
+    </section>
+
+    <!-- BOOKINGS -->
+    <section class="page" id="page-bookings">
+      <div class="toolbar">
+        <div class="chips" id="statusChips"></div>
+        <input class="search" id="bSearch" placeholder="🔍 חיפוש לפי שם או טלפון">
+        <select class="search" id="bWhen" style="max-width:170px">
+          <option value="upcoming">מהיום והלאה</option>
+          <option value="past">עבר</option>
+          <option value="all">הכול</option>
+        </select>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>לקוחה</th><th>טיפול</th><th>מועד</th><th>מחיר</th><th>סטטוס</th><th>תשלום</th><th></th></tr></thead>
+        <tbody id="bTable"></tbody>
+      </table></div>
+    </section>
+
+    <!-- CALENDAR -->
+    <section class="page" id="page-calendar">
+      <div class="cal-bar">
+        <button class="btn btn-ghost btn-sm" id="wPrev">→ שבוע קודם</button>
+        <button class="btn btn-ghost btn-sm" id="wToday">היום</button>
+        <button class="btn btn-ghost btn-sm" id="wNext">שבוע הבא ←</button>
+        <span class="range" id="wRange"></span>
+        <div class="cal-legend">
+          <span><i style="background:#fde3ee;border:2px solid var(--pink)"></i>מאושר</span>
+          <span><i style="background:var(--warn-bg);border:2px solid var(--warn)"></i>ממתין</span>
+          <span><i style="background:var(--ok-bg);border:2px solid var(--ok)"></i>הושלם</span>
+          <span><i style="background:repeating-linear-gradient(45deg,#fde7ef,#fde7ef 3px,#fff 3px,#fff 6px)"></i>חופשה / סגור</span>
+        </div>
+      </div>
+      <div class="week-wrap"><div class="week" id="week"></div></div>
+      <p class="sub" style="color:var(--ink-3);font-size:13px;margin-top:10px">💡 לחיצה על משבצת ריקה פותחת תור חדש בשעה הזו · לחיצה על תור פותחת את פרטיו</p>
+    </section>
+
+    <!-- AVAILABILITY -->
+    <section class="page" id="page-avail">
+      <div class="grid g-2e">
+        <div class="card">
+          <h3>שעות פעילות שבועיות <button class="btn btn-primary btn-sm" id="saveHours">שמירה</button></h3>
+          <div id="hoursEditor"></div>
+          <div class="row2" style="margin-top:16px">
+            <div class="field"><label>מרווח בין תורים (דק׳)</label><input type="number" id="setBuffer" min="0" step="5"></div>
+            <div class="field"><label>קפיצות זמן ביומן ההזמנות (דק׳)</label><select id="setStep"><option>15</option><option>30</option><option>60</option></select></div>
+          </div>
+          <label style="display:flex;gap:10px;align-items:center"><span class="switch"><input type="checkbox" id="setAuto"><span></span></span> אישור אוטומטי להזמנות מהאתר</label>
+        </div>
+        <div class="card">
+          <h3>חופשות וימי חסימה <button class="btn btn-primary btn-sm" id="addVac">+ הוספה</button></h3>
+          <div id="vacList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYMENTS -->
+    <section class="page" id="page-payments">
+      <div class="grid g-4" id="payStats"></div>
+      <div class="card" style="margin-top:18px">
+        <h3>ממתינים לגבייה <small>טיפולים שהתקיימו / מתקיימים היום ועדיין לא שולמו</small></h3>
+        <div id="dueList"></div>
+      </div>
+      <h3 style="margin:24px 0 12px;font-size:17px">היסטוריית תנועות</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>תאריך</th><th>לקוחה</th><th>סוג</th><th>אמצעי</th><th>סכום</th><th>קבלה</th></tr></thead>
+        <tbody id="payTable"></tbody>
+      </table></div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section class="page" id="page-clients">
+      <div class="toolbar"><input class="search" id="cSearch" placeholder="🔍 חיפוש לקוחה"></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>לקוחה</th><th>טלפון</th><th>ביקורים</th><th>ביקור אחרון</th><th>התור הבא</th><th>סה״כ הכנסות</th><th></th></tr></thead>
+        <tbody id="cTable"></tbody>
+      </table></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="page" id="page-services">
+      <div class="card">
+        <h3>טיפולים ומחירים <small>השינויים מתעדכנים מיד באתר</small><button class="btn btn-primary btn-sm" id="saveSvc">שמירת שינויים</button></h3>
+        <div id="svcEditor"></div>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <h3>מקדמה בהזמנה אונליין</h3>
+        <div class="field" style="max-width:220px"><label>סכום מקדמה (₪)</label><input type="number" id="setDeposit" min="0" step="10"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-bg" id="modalBg"><div class="modal" id="modal"></div></div>
+<div class="toasts" id="toasts"></div>
+
+<script src="../assets/store.js"></script>
+<script src="../assets/admin.js"></script>
+</body>
+</html>
